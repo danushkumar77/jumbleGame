@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Jumble Game</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="content-box">
+        <h1>🔠 Unscramble the Word!</h1>
+        <h3>{{ round_info }}</h3>
+        <p>It's <strong>{{ current_player }}</strong>'s turn!</p>
+        <p class="jumble-word">{{ jumbled_word }}</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="guess" placeholder="Your guess..." required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="scores">
+            <p>{{ player1_name }}: {{ player1_score }}</p>
+            <p>{{ player2_name }}: {{ player2_score }}</p>
+        </div>
+    </div>
+</body>
+</html>

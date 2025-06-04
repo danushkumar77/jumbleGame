@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Jumble Game</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="content-box">
+        <h1>🎯 Welcome to Word Jumble Game 🎯</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <h3>Player 1 Info</h3>
+            {{ form1.as_p }}
+
+            <h3>Player 2 Info</h3>
+            {{ form2.as_p }}
+
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Over!</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="content-box">
+        <h1>🏁 Game Over!</h1>
+        <p>{{ player1_name }}: {{ player1_score }} points</p>
+        <p>{{ player2_name }}: {{ player2_score }} points</p>
+        <h2>🏆 Winner: {{ winner }}</h2>
+
+        <a href="{% url 'start_game' %}"><button>Play Again</button></a>
+    </div>
+</body>
+</html>
